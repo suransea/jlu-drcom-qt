@@ -39,9 +39,9 @@ Windows 版的过几天再编译 (反正除了我也没别的人用)。
 -主界面1：
 
 
-![main](screenshot/main.png
+![main](screenshot/main.png)
 
-  
+
 -主界面2：
 
 
