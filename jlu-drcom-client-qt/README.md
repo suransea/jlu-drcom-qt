@@ -1,4 +1,0 @@
-
-# Drcom Client Qt Edition
-
----
