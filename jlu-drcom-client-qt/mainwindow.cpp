@@ -137,9 +137,11 @@ void MainWindow::on_minButton_clicked()
 
 void MainWindow::on_actionExit_triggered()
 {
-    loginThread->setExitFlagTrue();
-    if(loginThread.get()!=nullptr)loginThread->wait();
-    exit(0);
+  if(loginThread.get()!=nullptr){
+      loginThread->setExitFlagTrue();
+      loginThread->wait();
+  }
+  exit(0);
 }
 
 void MainWindow::on_actionLogin_Logout_triggered()
@@ -175,8 +177,10 @@ void MainWindow::showMainAction()
 
 void MainWindow::exitAction()
 {
-    loginThread->setExitFlagTrue();
-    if(loginThread.get()!=nullptr)loginThread->wait();
+    if(loginThread.get()!=nullptr){
+        loginThread->setExitFlagTrue();
+        loginThread->wait();
+    }
     exit(0);
 }
 

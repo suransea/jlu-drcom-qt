@@ -182,8 +182,8 @@ void LoginThread::makeKeepAlivePacket(QByteArray &data, int type, int randtimes)
 
         data[6] = 0xdc;
         data[7] = 0x02;
-        data[9] = (qint8)(randtimes >> 8);
-        data[10] = (qint8)randtimes;
+        data[9] = (quint8)(randtimes >> 8);
+        data[10] = (quint8)randtimes;
         memcpy(data.data()+16,flux.data(),4);
         if(type==2){
             memcpy(data.data()+28,hostIp.data(),4);
