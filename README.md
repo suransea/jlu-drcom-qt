@@ -19,6 +19,7 @@ Qt/ C++ 编写
 * Windows 系统下载此包 [drcom-client-qt-bin-win-0.1.7z](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-client-qt-bin-win-0.1.7z)
 
 * Linux 系统下载此包    [drcom-client-qt-bin-v0.1.tar.gz](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-qt-bin-v0.1.tar.gz)
+
 ##### Windows
 
 > 解压 -> 运行exe
