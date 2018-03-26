@@ -39,8 +39,6 @@ drcom-client.conf 为程序配置文件，如果你知道每一项代表什么, 
 
 Server IP 出现在设置中，但默认不允许修改，如需修改请将配置文件中`server_changeable`项更改为`true`。
 
-Windows 版的过几天再编译 (反正除了我也没别的人用)。
-
 #### 运行截图：
 
 -主界面1：
