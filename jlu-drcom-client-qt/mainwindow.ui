@@ -2,6 +2,14 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>465</width>
+    <height>233</height>
+   </rect>
+  </property>
   <property name="minimumSize">
    <size>
     <width>465</width>
@@ -18,8 +26,8 @@
    <string>Drcom Client</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>../build-jlu-drcom-client-qt-Desktop_Qt_5_0_2_GCC_64bit-Debug/share/drcom-client.png</normaloff>../build-jlu-drcom-client-qt-Desktop_Qt_5_0_2_GCC_64bit-Debug/share/drcom-client.png</iconset>
+   <iconset resource="resource.qrc">
+    <normaloff>:/png</normaloff>:/png</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -233,6 +241,8 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

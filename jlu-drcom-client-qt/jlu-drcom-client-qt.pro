@@ -47,3 +47,6 @@ FORMS += \
     settingswindow.ui \
     aboutwindow.ui \
     logwindow.ui
+
+RESOURCES += \
+    resource.qrc

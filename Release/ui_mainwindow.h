@@ -53,10 +53,11 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
+        MainWindow->resize(465, 233);
         MainWindow->setMinimumSize(QSize(465, 233));
         MainWindow->setMaximumSize(QSize(465, 233));
         QIcon icon;
-        icon.addFile(QStringLiteral("../build-jlu-drcom-client-qt-Desktop_Qt_5_0_2_GCC_64bit-Debug/share/drcom-client.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral(":/png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         MainWindow->setAutoFillBackground(true);
         MainWindow->setIconSize(QSize(128, 128));

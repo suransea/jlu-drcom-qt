@@ -118,7 +118,7 @@ void MainWindow::on_minButton_clicked()
     auto cfg=configureReader.getCfg();
     if(cfg["tray"]=="false")return;
     systemTrayIcon.reset(new QSystemTrayIcon());
-    QIcon qIcon=QIcon("share/drcom-client.png");
+    QIcon qIcon=QIcon(":/png");
     systemTrayIcon->setToolTip("drcom-client");
     systemTrayIcon->setIcon(qIcon);
     connect(systemTrayIcon.get(),SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
@@ -137,11 +137,11 @@ void MainWindow::on_minButton_clicked()
 
 void MainWindow::on_actionExit_triggered()
 {
-  if(loginThread.get()!=nullptr){
-      loginThread->setExitFlagTrue();
-      loginThread->wait();
-  }
-  exit(0);
+    if(loginThread.get()!=nullptr){
+        loginThread->setExitFlagTrue();
+        loginThread->wait();
+    }
+    exit(0);
 }
 
 void MainWindow::on_actionLogin_Logout_triggered()

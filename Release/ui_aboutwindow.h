@@ -43,7 +43,7 @@ public:
         label = new QLabel(AboutWindow);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(30, 30, 128, 128));
-        label->setPixmap(QPixmap(QString::fromUtf8("../build-jlu-drcom-client-qt-Desktop_Qt_5_0_2_GCC_64bit-Debug/share/drcom-client.png")));
+        label->setPixmap(QPixmap(QString::fromUtf8(":/png")));
         textBrowser = new QTextBrowser(AboutWindow);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
         textBrowser->setGeometry(QRect(170, 20, 291, 191));
