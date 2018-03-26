@@ -16,9 +16,11 @@ Qt/ C++ 编写
 
 #### 使用方法：
 
-* Windows 系统下载此包 [drcom-client-qt-bin-win-0.1.7z](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-client-qt-bin-win-0.1.7z)
+* Windows 系统下载此包 [drcom-client-qt-win-0.1.7z](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-client-qt-bin-win-0.1.7z)
 
 * Linux 系统下载此包    [drcom-client-qt-bin-v0.1.tar.gz](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-qt-bin-v0.1.tar.gz)
+
+* macOS 下载此包 [drcom-client-qt-mac-v0.1.dmg](https://github.com/suransea/jlu-drcom-client-qt/raw/master/jlu-drcom-client-qt-mac.dmg)
 
 ##### Windows
 
@@ -33,12 +35,32 @@ Qt/ C++ 编写
 * `$ chmod +x jlu-drcom-client-qt.sh`
 * `$ ./jlu-drcom-client-qt.sh`
 
+##### macOS
+
+> 安装：
+* 双击打开
+* 复制到应用程序
+
+> 配置：
+* 下载 [drcom-client.conf](https://github.com/suransea/jlu-drcom-client-qt/blob/master/Release/drcom-client.conf)
+* 拷贝到 Documents 文件夹
+
 
 程序首次运行会自动获取 MAC 地址，若登录失败可前往 Option->Settings手动更改MAC地址。 Gnome最新版（3.28）由于取消了托盘， 程序最小化后托盘图标可能出现在左上角。
 
 drcom-client.conf 为程序配置文件，如果你知道每一项代表什么, 可以手动更改。
 
 Server IP 出现在设置中，但默认不允许修改，如需修改请将配置文件中`server_changeable`项更改为`true`。
+
+#### 已知问题：
+
+###### Windows：
+  注销后再次点击登录可能会卡住，需要重新登录可以关掉重新运行。
+###### macOS：
+  最小化到托盘后点击托盘图标有概率崩溃。
+
+###### Linux：
+暂未发现。
 
 #### 运行截图：
 
