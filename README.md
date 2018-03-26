@@ -15,8 +15,15 @@ Qt/ C++ 编写
 * 快捷键
 
 #### 使用方法：
-Linux 系统下载此包    [drcom-qt-bin-v0.1.tar.gz](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-qt-bin-v0.1.tar.gz)
 
+* Windows 系统下载此包 [drcom-client-qt-bin-win-0.1.7z](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-client-qt-bin-win-0.1.7z)
+
+* Linux 系统下载此包    [drcom-client-qt-bin-v0.1.tar.gz](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-qt-bin-v0.1.tar.gz)
+##### Windows
+
+> 解压 -> 运行exe
+
+##### Linux
 > 解压:
 * `$ tar -zxvf drcom-qt-bin-v0.1.tar.gz`
 
