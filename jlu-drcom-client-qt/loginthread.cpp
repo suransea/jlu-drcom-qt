@@ -16,6 +16,13 @@ LoginThread::LoginThread()
 {
 }
 
+LoginThread::~LoginThread()
+{
+    udpSocket->deleteLater();
+    quit();
+    wait();
+}
+
 void LoginThread::setExitFlagTrue()
 {
     exitFlag=true;
@@ -98,7 +105,7 @@ void LoginThread::readPendingDatagrams()
 bool LoginThread::initialize()
 {
     auto cfg =MainWindow::configureReader.getCfg();
-    udpSocket.reset(new QUdpSocket());
+    udpSocket=new QUdpSocket();
     salt.resize(4);
     salt.fill(0);
     md5a.resize(16);
@@ -142,7 +149,7 @@ bool LoginThread::initialize()
     server[0]=serverIp&0xff;
 
     udpSocket->bind(hostAddress,61440);
-    connect(udpSocket.get(),SIGNAL(readyRead()),SLOT(readPendingDatagrams()));
+    connect(udpSocket,SIGNAL(readyRead()),SLOT(readPendingDatagrams()));
     QString macStr=QString::fromStdString(cfg["mac"]);
     QStringList macList=macStr.split(':');
     mac.resize(6);
@@ -166,7 +173,7 @@ void LoginThread::makeKeepAlivePacket(QByteArray &data, int type, int randtimes)
     if(type==0){
         data.resize(38);
         data.fill(0);
-        data[0]=0xff;
+        data[0]=(quint8)0xff;
         memcpy(data.data()+1,md5a.data(),16);
         memcpy(data.data()+20,tail.data(),16);
         data[36]=(quint8)(randtimes>>8);
@@ -180,7 +187,7 @@ void LoginThread::makeKeepAlivePacket(QByteArray &data, int type, int randtimes)
         data[4] = 0x0b;
         data[5] = (quint8)(2 * type - 1);
 
-        data[6] = 0xdc;
+        data[6] = (quint8)0xdc;
         data[7] = 0x02;
         data[9] = (quint8)(randtimes >> 8);
         data[10] = (quint8)randtimes;

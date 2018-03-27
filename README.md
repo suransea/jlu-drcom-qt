@@ -16,9 +16,9 @@ Qt/ C++ 编写
 
 #### 使用方法：
 
-* Windows 系统下载此包 [drcom-client-qt-win-0.1.7z](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-client-qt-bin-win-0.1.7z)
+* Windows 系统下载此包 [drcom-client-qt-win-0.1.1.7z](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-client-qt-bin-win-0.1.1.7z)
 
-* Linux 系统下载此包    [drcom-client-qt-bin-v0.1.tar.gz](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-qt-bin-v0.1.tar.gz)
+* Linux 系统下载此包    [drcom-client-qt-bin-v0.1.1.tar.gz](https://github.com/suransea/jlu-drcom-client-qt/raw/master/drcom-qt-bin-v0.1.1.tar.gz)
 
 * macOS 下载此包 [drcom-client-qt-mac-v0.1.dmg](https://github.com/suransea/jlu-drcom-client-qt/raw/master/jlu-drcom-client-qt-mac.dmg)
 
@@ -28,10 +28,10 @@ Qt/ C++ 编写
 
 ##### Linux
 > 解压:
-* `$ tar -zxvf drcom-qt-bin-v0.1.tar.gz`
+* `$ tar -zxvf drcom-qt-bin-v0.1.1.tar.gz`
 
 > 运行:
-* `$ cd drcom-qt-bin-v0.1/drcom`
+* `$ cd drcom-qt-bin-v0.1.1/drcom`
 * `$ chmod +x jlu-drcom-client-qt.sh`
 * `$ ./jlu-drcom-client-qt.sh`
 
@@ -54,13 +54,7 @@ Server IP 出现在设置中，但默认不允许修改，如需修改请将配�
 
 #### 已知问题：
 
-###### Windows：
-  注销后再次点击登录可能会卡住，需要重新登录可以关掉重新运行。
-###### macOS：
-  最小化到托盘后点击托盘图标有概率崩溃。
-
-###### Linux：
-暂未发现。
+macOS 下最小化到托盘后点击托盘图标有概率崩溃。
 
 #### 运行截图：
 

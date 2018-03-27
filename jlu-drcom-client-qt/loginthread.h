@@ -13,6 +13,7 @@ class LoginThread :public QThread
 public:
     static QList<QString> logs;
     LoginThread();
+    ~LoginThread();
     void setExitFlagTrue();
     QString getStatus();
 protected:
@@ -23,9 +24,9 @@ private:
     volatile bool exitFlag=false;
     volatile bool receiving=false;
     const bool isWireless=true;
-    //int dataLength;
     int receiveStatus=-1;
-    std::unique_ptr<QUdpSocket> udpSocket;
+    //std::unique_ptr<QUdpSocket> udpSocket;
+    QUdpSocket *udpSocket;
     QString status="wait";
     std::default_random_engine randomEngine=std::default_random_engine(time(nullptr));
     std::uniform_int_distribution<int> uid=std::uniform_int_distribution<int>(0,32767);
