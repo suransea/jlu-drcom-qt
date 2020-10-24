@@ -10,7 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 QT += network
 
-TARGET = jlu-drcom-client-qt
+TARGET = jlu-drcom-qt
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use

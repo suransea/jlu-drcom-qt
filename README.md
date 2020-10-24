@@ -1,1 +1,1 @@
-# Drcom Client Qt Edition
+# Drcom Qt Edition
