@@ -21,11 +21,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
     {
         ui->nameEdit->setText(config["name"]);
         ui->passwdEdit->setText(config["passwd"]);
-        ui->checkBox->setChecked(true);
+        ui->rememberCheckBox->setChecked(true);
     }
     if (config["auto"] == "true")
     {
-        ui->checkBox_2->setChecked(true);
+        ui->autoCheckBox->setChecked(true);
     }
 }
 
@@ -62,8 +62,8 @@ void MainWindow::on_loginButton_clicked()
         ui->loginButton->setText("login");
         ui->nameEdit->setEnabled(true);
         ui->passwdEdit->setEnabled(true);
-        ui->checkBox->setEnabled(true);
-        ui->checkBox_2->setEnabled(true);
+        ui->rememberCheckBox->setEnabled(true);
+        ui->autoCheckBox->setEnabled(true);
         loginned = false;
     }
     else
@@ -71,11 +71,11 @@ void MainWindow::on_loginButton_clicked()
         ui->loginButton->setText("logining...");
         ui->nameEdit->setEnabled(false);
         ui->passwdEdit->setEnabled(false);
-        ui->checkBox->setEnabled(false);
-        ui->checkBox_2->setEnabled(false);
+        ui->rememberCheckBox->setEnabled(false);
+        ui->autoCheckBox->setEnabled(false);
         loginned = true;
-        bool rememberStatus = ui->checkBox->isChecked();
-        bool autoStatus = ui->checkBox_2->isChecked();
+        bool rememberStatus = ui->rememberCheckBox->isChecked();
+        bool autoStatus = ui->autoCheckBox->isChecked();
         auto &&config = ConfigMapper::instance;
         config.set("remember", rememberStatus ? "true" : "false");
         config.set("auto", autoStatus ? "true" : "false");
@@ -176,24 +176,24 @@ void MainWindow::on_actionMinimize_triggered()
     on_minButton_clicked();
 }
 
-void MainWindow::on_checkBox_stateChanged(int state)
+void MainWindow::on_rememberCheckBox_stateChanged(int state)
 {
     if (Qt::Unchecked == state)
     {
-        if (ui->checkBox_2->isChecked())
+        if (ui->autoCheckBox->isChecked())
         {
-            ui->checkBox_2->setChecked(false);
+            ui->autoCheckBox->setChecked(false);
         }
     }
 }
 
-void MainWindow::on_checkBox_2_stateChanged(int state)
+void MainWindow::on_autoCheckBox_stateChanged(int state)
 {
     if (Qt::Checked == state)
     {
-        if (!ui->checkBox->isChecked())
+        if (!ui->rememberCheckBox->isChecked())
         {
-            ui->checkBox->setChecked(true);
+            ui->rememberCheckBox->setChecked(true);
         }
     }
 }

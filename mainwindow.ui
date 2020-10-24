@@ -65,7 +65,7 @@
      <string>Password:</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="rememberCheckBox">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -81,7 +81,7 @@
      <string>Remember Me</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_2">
+   <widget class="QCheckBox" name="autoCheckBox">
     <property name="geometry">
      <rect>
       <x>250</x>

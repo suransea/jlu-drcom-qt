@@ -35,9 +35,9 @@ private slots:
 
     void on_actionMinimize_triggered();
 
-    void on_checkBox_stateChanged(int state);
+    void on_rememberCheckBox_stateChanged(int state);
 
-    void on_checkBox_2_stateChanged(int state);
+    void on_autoCheckBox_stateChanged(int state);
 
     void on_actionSettings_triggered();
 
