@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
                                           ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(&drcom, &Drcom::loginSuccess, this, &MainWindow::on_loginSuccess);
+    connect(&drcom, &Drcom::loginFailed, this, &MainWindow::on_loginFailed);
     auto &&config = ConfigMapper::instance;
     if (config["remember"] == "true")
     {
@@ -23,10 +25,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent),
         ui->passwdEdit->setText(config["passwd"]);
         ui->rememberCheckBox->setChecked(true);
     }
-    if (config["auto"] == "true")
-    {
-        ui->autoCheckBox->setChecked(true);
-    }
+    ui->autoCheckBox->setChecked(config["auto"] == "true");
 }
 
 bool MainWindow::event(QEvent *e)
@@ -79,16 +78,8 @@ void MainWindow::on_loginButton_clicked()
         auto &&config = ConfigMapper::instance;
         config.set("remember", rememberStatus ? "true" : "false");
         config.set("auto", autoStatus ? "true" : "false");
-        if (rememberStatus)
-        {
-            config.set("name", name);
-            config.set("passwd", password);
-        }
-        else
-        {
-            config.set("name", "");
-            config.set("passwd", "");
-        }
+        config.set("name", rememberStatus ? name : "");
+        config.set("passwd", rememberStatus ? password : "");
         config.flush();
 
         drcom.login(name, password);
@@ -121,7 +112,7 @@ void MainWindow::on_minButton_clicked()
         return;
     }
     auto systemTrayIcon = new QSystemTrayIcon();
-    QIcon icon = QIcon(":/png");
+    QIcon icon(":/png");
     systemTrayIcon->setToolTip("drcom-client");
     systemTrayIcon->setIcon(icon);
     auto trayActionExit = new QAction("Exit", this);
